@@ -3,6 +3,17 @@
     padding: 21.5rem 1.5rem 21.5rem 1.5rem;
 }
 
+.mapdiv {
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+}
+
+#map {
+    height: 94vh;
+    width: 100%;
+}
+
 #video {
     position: fixed;
     right: 0;
@@ -10,4 +21,6 @@
     background: rgba(0, 0, 0, 0.75);
     size: 100vh 100vw;
     z-index: -1;
+    left: 50%;
+    transform: translate(-50%, 0);
 }

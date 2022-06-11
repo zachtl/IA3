@@ -14,7 +14,13 @@
                             <a class="nav-link<?php if ((substr((basename($_SERVER['PHP_SELF'])), 0, -4)) == "review") echo (" active") ?>" href="./review.php">Reviews</a>
                         </li>
                     </ul>
-                    <button type="button" class="btn btn-light">Sign In</button>
+                    <?php
+                    if (!isset($_SESSION['UID'])) {
+                        echo ('<a type="button" class="btn btn-light" href="./login.php">Sign In</a>');
+                    } else {
+                        echo ('<a type="button" class="btn btn-dark" href="./account.php">Manage Account</a>');
+                    };
+                    ?>
                 </div>
             </div>
         </nav>
