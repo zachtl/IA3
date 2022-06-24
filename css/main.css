@@ -1,6 +1,15 @@
 .index-back {
     background-image: url("./assets/index.png");
-    padding: 21.5rem 1.5rem 21.5rem 1.5rem;
+    padding: 36.5vh 1.5rem 36.5vh 1.5rem;
+}
+
+#map {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
 }
 
 #video {
@@ -10,4 +19,22 @@
     background: rgba(0, 0, 0, 0.75);
     size: 100vh 100vw;
     z-index: -1;
+}
+
+.blur {
+    animation: blur 5s;
+}
+
+@keyframes blur {
+    100% {
+        -webkit-filter: blur(0px);
+    }
+
+    0% {
+        -webkit-filter: blur(50px);
+    }
+}
+
+.img1 {
+    background-image: url("https://images.squarespace-cdn.com/content/v1/53b839afe4b07ea978436183/1608506169128-S6KYNEV61LEP5MS1UIH4/traditional-food-around-the-world-Travlinmad.jpg");
 }
