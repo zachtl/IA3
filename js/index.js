@@ -13,13 +13,11 @@ map.keyboard.disable();
 $(".leaflet-control-zoom").css("visibility", "hidden");
 
 var settings = {
-    // url: "https://cors-anywhere.herokuapp.com/https://www.bnefoodtrucks.com.au/api/1/private-bookings",
     url: "https://www.bnefoodtrucks.com.au/api/1/private-bookings",
     method: "GET",
     headers: {
         "Content-Type": "application/json"
     }
-
 }
 
 function fly() {
@@ -29,18 +27,12 @@ function fly() {
     });
 
     $.ajax(settings).done(function (results) {
-        console.log(
-            ((results[0].Geolocation).slice(31, -2)).split(/[, ]+/)[0]
-        )
         console.log(results);
-
         for (var i = 0; i < results.length; i++) {
             var marker = L.marker([(((results[i].Geolocation).slice(31, -2)).split(/[, ]+/)[1]), (((results[i].Geolocation).slice(31, -2)).split(/[, ]+/)[0])]).addTo(map)
             marker.bindPopup("<h1>" + results[i].Title + "</h1>");
         }
     })
-
-    console.log(e)
 }
 
 fly();

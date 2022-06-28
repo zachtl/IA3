@@ -14,13 +14,24 @@
 
 <body>
     <?php include("nav.php") ?>
+    <?php
+    // $conn = new mysqli("192.168.1.8:3306", "admin", "admin", "ia3");
+    // if ($conn->connect_error) {
+    //     die("Connection failed: " . $conn->connect_error);
+    // }
+    // $sql = "SELECT * FROM test";
+    // $result = $conn->query($sql);
+    ?>
     <!--Page Content-->
     <main>
-        <div class="px-3 py-5 img1 text-white">
-            <div class="containe px-3 py-3">
-                <h1 class="display-1">Find whats up</h1>
-                <p class="lead">Look through the active and future events for food trucks</p>
+        <!-- Truck Section -->
+        <div class="px-3 py-5 img1">
+            <div class="containe px-3 py-3 text-white">
+                <h1 class="display-1">Find whats out there</h1>
+                <p class="lead">Look through all the various trucks out and about right now</p>
             </div>
+        </div>
+        <div class="grid" id="trucks">
         </div>
     </main>
     <?php include("footer.php") ?>
