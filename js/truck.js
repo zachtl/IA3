@@ -1,3 +1,5 @@
+//Map
+
 var map = L.map('map', {
     // center: [-27.470125, 153.021072],
     center: [-24, 133],
@@ -10,6 +12,12 @@ L.tileLayer('https://api.mapbox.com/styles/v1/zachtl/cl49vflg1000115ljhl7ubnta/t
     maxZoom: 19,
     attribution: '© OpenStreetMap'
 }).addTo(map);
+
+document.onload = map.flyTo([-27.470125, 153.021072], 10, {
+    animate: true,
+    duration: 5,
+    easeLinearity: 0.5,
+})
 
 var settings = {
     "url": "https://www.bnefoodtrucks.com.au/api/1/trucks",
@@ -24,8 +32,3 @@ $.ajax(settings).done(function (response) {
     console.log(response);
 });
 
-document.onload = map.flyTo([-27.470125, 153.021072], 10, {
-    animate: true,
-    duration: 5,
-    easeLinearity: 0.5,
-})
