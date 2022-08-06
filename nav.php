@@ -10,6 +10,20 @@
                         <li class="nav-item">
                             <a class="nav-link<?php if ((substr((basename($_SERVER['PHP_SELF'])), 0, -4)) == "main") echo (" active") ?>" href="./main.php">Home</a>
                         </li>
+                        <?php
+                        if (isset($_SESSION['LVL'])){
+                            if ($_SESSION['LVL'] > 1) {
+                                if ((substr((basename($_SERVER['PHP_SELF'])), 0, -4)) == "eventmanagement") {
+                                    $idkwhattonamethis = " active";
+                                } else {
+                                    $idkwhattonamethis = "";
+                                }
+                                echo '<li class="nav-item">
+                                        <a class="nav-link'.$idkwhattonamethis.'" href="./eventmanagement.php">Event Management</a>
+                                    </li>';
+                            }
+                        }
+                        ?>
                     </ul>
                     <?php
                     if (!isset($_SESSION['UID'])) {
@@ -23,3 +37,8 @@
             </div>
         </nav>
     </header>
+    <?php
+        if (isset($alert)){
+            echo '<div class="alert alert-'.$alert.'" role="alert">'.$alertmsg.'</div>';
+        }
+    ?>

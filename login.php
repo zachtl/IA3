@@ -29,6 +29,8 @@ if (isset($_POST['submit'])) {
             if (password_verify($_POST['password'],(mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM `user` WHERE ".$find." = '".$_POST['uidInput']."'"))['password']))){
                 $_SESSION['UID'] = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM `user` WHERE ".$find." = '".$_POST['uidInput']."'"))['userName'];
                 $_SESSION['ID'] = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM `user` WHERE ".$find." = '".$_POST['uidInput']."'"))['userID'];
+                $_SESSION['LVL'] = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM `user` WHERE ".$find." = '".$_POST['uidInput']."'"))['accountLevel'];
+                echo (var_dump($_SESSION));
                 header("Location: main.php");
                 exit();
             } else {

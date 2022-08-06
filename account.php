@@ -25,9 +25,9 @@ if (!isset($_SESSION['UID'])) {
     <?php include("nav.php") ?>
     <!--Page Content-->
     <main class="transition">
-        <div class="px-3 py-5 img1">
+        <div class="px-3 py-5 img1" style="background-size: cover;">
             <div class="containe px-3 py-3 text-white">
-                <h1 class="display-1">Welcome <?php echo $_SESSION['UID']?>!</h1>
+                <h1 class="display-1">Event Management</h1>
                 <p class="lead">Make changes to your account here.</p>
             </div>
         </div>
